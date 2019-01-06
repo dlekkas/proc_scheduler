@@ -13,7 +13,6 @@ Scheduler executes as a parent process and distributes the processing resources 
 
 ### Scheduler Monitoring via Command Interpreter (Shell)
 A command interpreter is implemented to accept commands from the user and afterwards conveys the appropriate operation to process scheduler and awaits for its response. The interprocess communication is achieved via unix pipes.  
-![Alt text](https://i.imgur.com/P2CtNXZ.png)
 The following commands are supported by shell:
 ```
   p               ->  Prints the running processes along with their IDs, PIDs and name
@@ -23,6 +22,7 @@ The following commands are supported by shell:
   e <prog-name>   ->  Creates a new process and schedules it accordingly
   q               ->  Terminates shell
 ```
+![Alt text](https://i.imgur.com/P2CtNXZ.png)
 ### Priority Scheduling Schema
 The scheduler suppors two distinct priorities 'LOW' and 'HIGH'. The scheduling occurs primarily on processes with 'HIGH' priority and the rest are ignored until no privileged processes participate in scheduling. This implementation is susceptible to starvation, though an aging mechanism could easily address this issue.
 
