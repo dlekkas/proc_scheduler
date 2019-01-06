@@ -9,10 +9,11 @@ Each process is represented by a Process Control Block (PCB) and scheduler maint
   
 
 Scheduler executes as a parent process and distributes the processing resources among its child processes. The signals SIGSTOP and SIGCONT are utilized by parent to monitor its children scheduling. Each process executes for a short interval and is removed by the process list in case of termination prior to its interval timeout. Scheduler operates on asynchronous manner and leverages SIGALRM and SIGCHLD to learn when a process terminates and when its time quantum timeouts.
-![Alt text](https://imgur.com/iJblS51)
+![Alt text](https://i.imgur.com/iJblS51.png)
 
 ### Scheduler Monitoring via Command Interpreter (Shell)
 A command interpreter is implemented to accept commands from the user and afterwards conveys the appropriate operation to process scheduler and awaits for its response. The interprocess communication is achieved via unix pipes.  
+![Alt text](https://i.imgur.com/P2CtNXZ.png)
 The following commands are supported by shell:
 ```
   p               ->  Prints the running processes along with their IDs, PIDs and name
