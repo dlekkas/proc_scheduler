@@ -6,8 +6,10 @@ This project contains the implementation of a round-robin scheduler for userspac
 ## Implementation
 ### Round-robin Scheduler
 Each process is represented by a Process Control Block (PCB) and scheduler maintains a circular double-linked list of PCBs. This design option enables the scheduler to dispatch the process switch via circular list traversing.  Additionally, the double-linkage facilitates the removal of processes but tradeoffs memory space.  
-Scheduler executes as a parent process and distributes the processing resources among its child processes. The signals SIGSTOP and SIGCONT are utilized by parent to monitor its children scheduling. Each process executes for a short interval and is removed by the process list in case of termination prior to its interval timeout. Scheduler operates on asynchronous manner and leverages SIGALRM and SIGCHLD to learn when a process terminates and when its time quantum timeouts.
+  
 
+Scheduler executes as a parent process and distributes the processing resources among its child processes. The signals SIGSTOP and SIGCONT are utilized by parent to monitor its children scheduling. Each process executes for a short interval and is removed by the process list in case of termination prior to its interval timeout. Scheduler operates on asynchronous manner and leverages SIGALRM and SIGCHLD to learn when a process terminates and when its time quantum timeouts.
+![Alt text](https://imgur.com/iJblS51)
 
 ### Scheduler Monitoring via Command Interpreter (Shell)
 A command interpreter is implemented to accept commands from the user and afterwards conveys the appropriate operation to process scheduler and awaits for its response. The interprocess communication is achieved via unix pipes.  
